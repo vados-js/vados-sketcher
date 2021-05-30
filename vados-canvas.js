@@ -26,6 +26,9 @@ export class VadosCanvas {
     const down = () => {
       this.cnv.addEventListener('mousemove', move);
       this.cnv.addEventListener('mouseup', up);
+
+      this.ctx.strokeStyle = this.strokeStyle;
+      this.ctx.lineWidth = this.lineWidth;
       this.ctx.beginPath();
     };
     const move = (evt) => {
@@ -37,7 +40,8 @@ export class VadosCanvas {
       this.cnv.removeEventListener('mouseup', up);
     };
 
-    this.ctx.strokeStyle = 'black';
+    this.strokeStyle = 'red';
+    this.lineWidth = 15;
 
     this.cnv.addEventListener('mousedown', down);
   }
