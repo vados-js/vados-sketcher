@@ -1,4 +1,4 @@
-export class VadosCanvas {
+export class VCanvas {
   /**@param {HTMLElement} container */
   constructor(container) {
     this.container = container;

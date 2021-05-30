@@ -1,3 +1,3 @@
-import {VadosCanvas} from './vados-canvas.js';
+import {VCanvas} from './v-canvas.js';
 const container = document.getElementById('container');
-const canvas = new VadosCanvas(container);
+const canvas = new VCanvas(container);
