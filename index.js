@@ -1,10 +1,11 @@
 import {VCanvas} from './v-canvas.js';
+import { VButton } from './v-tool.js';
 import { VToolbar } from './v-toolbar.js';
 const container = document.getElementById('container');
 const canvas = new VCanvas(container);
 const toolBar = new VToolbar(canvas, container);
 
-const btn = document.createElement('button');
-btn.textContent = 'green';
-btn.addEventListener('click', () => {canvas.setStrokeStyle('green')});
-toolBar.bar.appendChild(btn);
+const greenBtn = new VButton({ label: 'green', action: () => { canvas.setStrokeStyle('green') }});
+toolBar.bar.appendChild(greenBtn.control);
+const blackBtn = new VButton({ label: 'black', action: () => { canvas.setStrokeStyle('black') }});
+toolBar.bar.appendChild(blackBtn.control);
