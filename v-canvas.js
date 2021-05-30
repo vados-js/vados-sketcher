@@ -17,9 +17,6 @@ export class VCanvas {
 
     this.container.appendChild(this.cnv);
 
-    this.cnv.width = this.cnv.offsetWidth;
-    this.cnv.height = this.cnv.offsetHeight;
-
     this.ctx.fillStyle = 'white';
     this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
 
@@ -40,9 +37,21 @@ export class VCanvas {
       this.cnv.removeEventListener('mouseup', up);
     };
 
-    this.strokeStyle = 'red';
-    this.lineWidth = 15;
+    this.setStrokeStyle('red');
+    this.setLineWidth(15);
 
     this.cnv.addEventListener('mousedown', down);
+  }
+  /** @param {string} style */
+  setStrokeStyle(style){
+    this.strokeStyle = style;
+  }
+  /** @param {number} width */
+  setLineWidth(width){
+    this.lineWidth = width;
+  }
+  updateSize(){
+    this.cnv.width = this.cnv.offsetWidth;
+    this.cnv.height = this.cnv.offsetHeight;
   }
 }
