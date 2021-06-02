@@ -13,6 +13,7 @@ export class VToolbar{
 
     this.bar = document.createElement('div');
     this.bar.style.setProperty('width', '100%');
+    this.bar.style.setProperty('display', 'flex');
     this.bar.style.setProperty('height', this.BAR_HEIGHT);
     this.bar.style.setProperty('box-shadow', '0px -2px 5px rgba(0,0,0,.25)');
     this.bar.style.setProperty('position', 'relative');
