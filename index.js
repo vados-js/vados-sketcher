@@ -13,5 +13,6 @@ toolBar.bar.appendChild(redBtn.control);
 const blackBtn = new VButton({ color: 'black', mode: VButton.mods.color, action: () => { canvas.setStrokeStyle('black') }});
 toolBar.bar.appendChild(blackBtn.control);
 
-const range = new VRange({ label: 'size', action: () => { canvas.setLineWidth(range.value) } });
+const range = new VRange({ label: 'size', max: 50, action: () => { canvas.setLineWidth(range.value) } });
+range.value = canvas.lineWidth;
 toolBar.bar.appendChild(range.control);

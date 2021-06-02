@@ -43,14 +43,14 @@ VButton.mods = {
 };
 
 export class VRange extends VButton {
-  constructor({ min = 0, max = 100, step = 1, ...props }) {
+  constructor({ min = 0, max = 100, step = 1, value = step, ...props }) {
     super(props);
     this.min = min;
     this.max = max;
     this.step = step;
     /**@type {HTMLInputElement} */
     this._control = null;
-    this.value = 0;
+    this.value = value;
   }
   get control() {
     if (!this._control) {
@@ -59,6 +59,7 @@ export class VRange extends VButton {
       this._control.min = String(this.min);
       this._control.max = String(this.max);
       this._control.step = String(this.step);
+      this._control.value = this.value;
       this._control.addEventListener('input', (e) => {
         this.value = parseFloat(this._control.value);
         this.action(e);
