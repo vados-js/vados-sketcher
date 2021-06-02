@@ -16,21 +16,32 @@ export class VTool {
 }
 
 export class VButton extends VTool {
-  constructor({ action = (e) => { console.warn(`no action in ${this.name}`) }, ...props }) {
+  constructor({ action = (e) => { console.warn(`no action in ${this.name}`) }, color = 'black', mode = VButton.mods.text, ...props }) {
     super(props);
     this.action = action;
     /**@type {HTMLButtonElement} */
     this._control = null;
+    this.color = color;
+    this.mode = mode;
   }
   get control() {
     if (!this._control) {
       this._control = document.createElement('button');
-      this._control.textContent = this.label;
+      this.mode();
       this._control.addEventListener('click', this.action);
     }
     return this._control;
   }
 }
+VButton.mods = {
+  text() {
+    this._control.textContent = this.label;
+  },
+  color() {
+    this._control.style.setProperty('background-color', this.color);
+  }
+};
+
 export class VRange extends VButton {
   constructor({ min = 0, max = 100, step = 1, ...props }) {
     super(props);
