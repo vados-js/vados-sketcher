@@ -25,12 +25,13 @@ export class VCanvas {
       this.cnv.addEventListener('mouseup', up);
 
       this.ctx.strokeStyle = this.strokeStyle;
+      this.ctx.fillStyle = this.strokeStyle;
       this.ctx.lineWidth = this.lineWidth;
-      this.ctx.beginPath();
     };
     const move = (evt) => {
-      this.ctx.lineTo(evt.x, evt.y);
-      this.ctx.stroke();
+      this.ctx.beginPath();
+      this.ctx.arc(evt.x, evt.y, this.lineWidth, 0, Math.PI * 2);
+      this.ctx.fill();
     };
     const up = () => {
       this.cnv.removeEventListener('mousemove', move);
