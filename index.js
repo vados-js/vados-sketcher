@@ -17,3 +17,6 @@ toolBar.bar.appendChild(blackBtn.control);
 const range = new VRange({ label: 'size', max: 50, action: () => { canvas.setLineWidth(range.value) } });
 range.value = canvas.lineWidth;
 toolBar.bar.appendChild(range.control);
+
+const clearBtn = new VButton({ label: 'CLEAR', action: () => { canvas.clear() } });
+toolBar.bar.appendChild(clearBtn.control);

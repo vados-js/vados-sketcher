@@ -17,8 +17,7 @@ export class VCanvas {
 
     this.container.appendChild(this.cnv);
 
-    this.ctx.fillStyle = 'white';
-    this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
+    this.clear();
 
     const down = () => {
       this.cnv.addEventListener('mousemove', move);
@@ -42,6 +41,10 @@ export class VCanvas {
     this.setLineWidth(15);
 
     this.cnv.addEventListener('mousedown', down);
+  }
+  clear(){
+    this.ctx.fillStyle = 'white';
+    this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
   }
   /** @param {string} style */
   setStrokeStyle(style){
