@@ -22,6 +22,7 @@ export class VToolbar{
 
     this.vCanvas.cnv.style.setProperty('height', `calc(100% - ${this.BAR_HEIGHT})`);
     this.vCanvas.updateSize();
+    this.vCanvas.clear();
   }
 }
 VToolbar.HEIGHT = '3em';

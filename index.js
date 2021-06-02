@@ -20,3 +20,5 @@ toolBar.bar.appendChild(range.control);
 
 const clearBtn = new VButton({ label: 'CLEAR', action: () => { canvas.clear() } });
 toolBar.bar.appendChild(clearBtn.control);
+const saveBtn = new VButton({ label: 'SAVE', action: () => { canvas.save() } });
+toolBar.bar.appendChild(saveBtn.control);

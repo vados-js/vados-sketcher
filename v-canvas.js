@@ -46,6 +46,13 @@ export class VCanvas {
     this.ctx.fillStyle = 'white';
     this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
   }
+  save(){
+    const data = this.cnv.toDataURL();
+    const a = document.createElement('a');
+    a.href = data;
+    a.setAttribute('download', 'picture.png');
+    a.click();
+  }
   /** @param {string} style */
   setStrokeStyle(style){
     this.strokeStyle = style;
