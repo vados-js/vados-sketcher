@@ -9,7 +9,7 @@ export class VToolbar{
     this.vCanvas = vCanvas;
     this.container = container || vCanvas.container;
 
-    this.BAR_HEIGHT = '3em';
+    this.BAR_HEIGHT = VToolbar.HEIGHT;
 
     this.bar = document.createElement('div');
     this.bar.style.setProperty('width', '100%');
@@ -24,3 +24,4 @@ export class VToolbar{
     this.vCanvas.updateSize();
   }
 }
+VToolbar.HEIGHT = '3em';

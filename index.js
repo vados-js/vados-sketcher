@@ -7,6 +7,7 @@ const toolBar = new VToolbar(canvas, container);
 
 const greenBtn = new VButton({ color: 'green', mode: VButton.mods.color, action: () => { canvas.setStrokeStyle('green') }});
 toolBar.bar.appendChild(greenBtn.control);
+
 const redBtn = new VButton({ color: 'red', mode: VButton.mods.color, action: () => { canvas.setStrokeStyle('red') }});
 toolBar.bar.appendChild(redBtn.control);
 

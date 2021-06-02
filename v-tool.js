@@ -1,3 +1,5 @@
+import { VToolbar } from "./v-toolbar.js";
+
 export class VTool {
   constructor({ id = uuidv4(), name = id || '', label = name || '' }) {
     this.id = id;
@@ -28,6 +30,7 @@ export class VButton extends VTool {
     if (!this._control) {
       this._control = document.createElement('button');
       this.mode();
+      this._control.style.setProperty('min-width', VToolbar.HEIGHT);
       this._control.addEventListener('click', this.action);
     }
     return this._control;
